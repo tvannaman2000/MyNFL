@@ -8,5 +8,8 @@ C:\MyNFL is where I store all my .NFL files for loading and unloading.
 
 It is configured to use a MySQL database that resides on my Unraid server.  DDL to create the tables is in the 
   setup -> Initialize League -> Create Tables. path.  You can scrape them out of the .cpp file.
+  
+  Setup -> Initilize League -> (Init League, Team Utilities, Edit Divisions, Create Tables) are the only 
+  working parts of this app so far.  I figured I'd start at the ground floor and build the infrastructure first.
 
 
