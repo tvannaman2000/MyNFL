@@ -6,17 +6,19 @@
 //---------------------------------------------------------------------------
 USEFORM("Owner.cpp", frmowner);
 USEFORM("OffSeason.cpp", frmoffseason);
-USEFORM("Setup.cpp", frmsetup);
 USEFORM("Weekly.cpp", frmweekly);
 USEFORM("Teams.cpp", frmteams);
 USEFORM("Statistics.cpp", frmstatistics);
+USEFORM("Setup.cpp", frmsetup);
 USEFORM("DM1.cpp", DataModule1); /* TDataModule: File Type */
 USEFORM("DAC_test.cpp", frmdactest);
 USEFORM("Commish.cpp", frmcommish);
-USEFORM("EditTeam.cpp", frmeditteam);
+USEFORM("Coaches.cpp", frmcoaches);
 USEFORM("MyNFL.cpp", Form1);
 USEFORM("Initialize_League.cpp", frminitleague);
+USEFORM("EditTeam.cpp", frmeditteam);
 USEFORM("EditDivisions.cpp", frmdivisions);
+USEFORM("Schedule_Templates.cpp", frmsched_template);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -37,6 +39,8 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(Tfrmowner), &frmowner);
 		Application->CreateForm(__classid(Tfrmeditteam), &frmeditteam);
 		Application->CreateForm(__classid(Tfrmdivisions), &frmdivisions);
+		Application->CreateForm(__classid(Tfrmcoaches), &frmcoaches);
+		Application->CreateForm(__classid(Tfrmsched_template), &frmsched_template);
 		Application->Run();
 	}
 	catch (Exception &exception)

@@ -65,8 +65,28 @@ void __fastcall Tfrminitleague::BcreatetablesClick(TObject *Sender)
 							   losses int default 0, \
 							   winpct decimal(5,1) default 0.0,\
 							   offense varchar(15),\
-							   defense varchar(15)\
+							   defense varchar(15), \
+							   age int default 40 \
 							   ) ENGINE=INNODB");
+	FDConnection1->ExecSQL("DELIMITER $$  \
+							create trigger pct_upd before update on coaches   \
+							for each row   \
+							  begin   \
+								  if new.wins > 0 then \
+									set new.winpct = (new.wins / (new.wins + new.losses)) * 100;  \
+								  end if;  \
+							  end; \
+							  $$");
+
+	FDConnection1->ExecSQL("DELIMITER $$ \
+	                        create trigger pct_ins before insert on coaches \
+							for each row  \
+							  begin   \
+								 if new.wins > 0 then   \
+								   set new.winpct = (new.wins / (new.wins + new.losses)) * 100;  \
+								 end if; \
+							  end; \
+                              $$") ;
 	Sleep(5);
 
 	Memo1->Lines->Add("Creating nfl table");
@@ -90,6 +110,7 @@ void __fastcall Tfrminitleague::BcreatetablesClick(TObject *Sender)
 							 `division` varchar(12) DEFAULT NULL,  \
 							 `last_finish` int DEFAULT NULL,     \
 							  `div_code` varchar(2) DEFAULT NULL, \
+							  coach varchar(45) ,\
 							 PRIMARY KEY (`team_id`)  \
 							) ENGINE=InnoDB ");
 
@@ -377,7 +398,10 @@ void __fastcall Tfrminitleague::BcreatetablesClick(TObject *Sender)
 							 `v_finish` int NOT NULL,              \
 							 `h_division` varchar(3) NOT NULL,   \
 							  `h_finish` int NOT NULL,         \
-							 `week` int NOT NULL          \
+							 `week` int NOT NULL,    \
+							  no_teams int,       \
+							  no_divisions int,  \
+                              no_games int   \
 							) ENGINE=InnoDB");
 
 	Memo1->Lines->Add("Creating schedule table");
@@ -511,6 +535,18 @@ void __fastcall Tfrminitleague::BeditdivisionsClick(TObject *Sender)
 	frmdivisions->Top = pt.y + 5;
 	frmdivisions->Show();
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tfrminitleague::BcoachesClick(TObject *Sender)
+{
+     TPoint pt;
+
+
+	pt = frminitleague->ClientOrigin;
+	frmcoaches->Left = pt.x + 2;
+	frmcoaches->Top = pt.y + 5;
+	frmcoaches->Show();
 }
 //---------------------------------------------------------------------------
 

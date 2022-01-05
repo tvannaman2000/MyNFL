@@ -43,5 +43,27 @@ Coordinates=341,1,144,33
 Coordinates=292,303,46,51
 
 [Beditdivisions]
-Coordinates=341,1,53,51
+Coordinates=341,1,84,51
+
+[frmcoaches.FDQuery1]
+Visible=False
+Coordinates=523,193,124,33
+
+[frmcoaches.FDQuery4]
+Coordinates=0,0,124,51
+
+[frmcoaches.BindSourceDB1]
+Coordinates=143,1,153,249
+
+[frmcoaches.FDQuery3]
+Coordinates=523,53,124,51
+
+[frmcoaches.FDQuery2]
+Coordinates=14,70,124,51
+
+[Bcoaches]
+Coordinates=523,123,62,51
+
+[frmcoaches.DataSource1]
+Coordinates=341,283,137,33
 

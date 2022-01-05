@@ -117,6 +117,12 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="Coaches.cpp">
+            <Form>frmcoaches</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Coaches.h</DependentOn>
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Commish.cpp">
             <Form>frmcommish</Form>
             <FormType>dfm</FormType>
@@ -179,6 +185,12 @@
             <DependentOn>Owner.h</DependentOn>
             <BuildOrder>12</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Schedule_Templates.cpp">
+            <Form>frmsched_template</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Schedule_Templates.h</DependentOn>
+            <BuildOrder>16</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Setup.cpp">
             <Form>frmsetup</Form>
             <FormType>dfm</FormType>
@@ -205,17 +217,19 @@
         </CppCompile>
         <FormResources Include="Owner.dfm"/>
         <FormResources Include="OffSeason.dfm"/>
-        <FormResources Include="Setup.dfm"/>
         <FormResources Include="Weekly.dfm"/>
         <FormResources Include="Teams.dfm"/>
         <FormResources Include="Statistics.dfm"/>
+        <FormResources Include="Setup.dfm"/>
         <FormResources Include="DM1.dfm"/>
         <FormResources Include="DAC_test.dfm"/>
         <FormResources Include="Commish.dfm"/>
-        <FormResources Include="EditTeam.dfm"/>
+        <FormResources Include="Coaches.dfm"/>
         <FormResources Include="MyNFL.dfm"/>
         <FormResources Include="Initialize_League.dfm"/>
+        <FormResources Include="EditTeam.dfm"/>
         <FormResources Include="EditDivisions.dfm"/>
+        <FormResources Include="Schedule_Templates.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -254,13 +268,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgstl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX64">
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32270.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgstl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -269,8 +283,8 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX32">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32270.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -306,13 +320,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c270mt.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgcrtl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX64">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c270mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

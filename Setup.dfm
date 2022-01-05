@@ -69,6 +69,7 @@ object frmsetup: Tfrmsetup
     ParentFont = False
     TabOrder = 1
     WordWrap = True
+    OnClick = BSchedformClick
   end
   object Bcoaches: TButton
     AlignWithMargins = True

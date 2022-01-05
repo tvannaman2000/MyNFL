@@ -10,6 +10,7 @@
 #include "DM1.h"
 #include "MyNFL.h"
 #include "Initialize_League.h"
+#include "Schedule_Templates.h"
 //---------------------------------------------------------------------------
 class Tfrmsetup : public TForm
 {
@@ -22,6 +23,7 @@ __published:	// IDE-managed Components
 	TButton *Balterleague;
 	TButton *Bseason;
 	void __fastcall BinitleagueClick(TObject *Sender);
+	void __fastcall BSchedformClick(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

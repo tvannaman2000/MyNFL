@@ -33,3 +33,15 @@ void __fastcall Tfrmsetup::BinitleagueClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+void __fastcall Tfrmsetup::BSchedformClick(TObject *Sender)
+{
+    	TPoint pt;
+
+
+	pt = frmsetup->ClientOrigin;
+	frmsched_template->Left = pt.x + 2;
+	frmsched_template->Top = pt.y + 5;
+	frmsched_template->Show();
+}
+//---------------------------------------------------------------------------
+

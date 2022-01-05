@@ -123,6 +123,21 @@ object frminitleague: Tfrminitleague
     WordWrap = True
     OnClick = BeditdivisionsClick
   end
+  object Bcoaches: TButton
+    Left = 512
+    Top = 40
+    Width = 97
+    Height = 57
+    Caption = 'Coaches'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    OnClick = BcoachesClick
+  end
   object FDConnection1: TFDConnection
     Params.Strings = (
       'ConnectionDef=NFL')

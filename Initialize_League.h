@@ -27,6 +27,7 @@
 #include "Teams.h"
 #include "DAC_test.h"
 #include "EditDivisions.h"
+#include "Coaches.h"
 //---------------------------------------------------------------------------
 class Tfrminitleague : public TForm
 {
@@ -39,11 +40,13 @@ __published:	// IDE-managed Components
 	TLabel *Label1;
 	TButton *Bloadteam;
 	TButton *Beditdivisions;
+	TButton *Bcoaches;
 	void __fastcall BinitleagueClick(TObject *Sender);
 	void __fastcall BcreatetablesClick(TObject *Sender);
 	void __fastcall BloadteamClick(TObject *Sender);
 	void __fastcall BwriteteamClick(TObject *Sender);
 	void __fastcall BeditdivisionsClick(TObject *Sender);
+	void __fastcall BcoachesClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall Tfrminitleague(TComponent* Owner);
