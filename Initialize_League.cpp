@@ -110,6 +110,7 @@ void __fastcall Tfrminitleague::BcreatetablesClick(TObject *Sender)
 							 `division` varchar(12) DEFAULT NULL,  \
 							 `last_finish` int DEFAULT NULL,     \
 							  `div_code` varchar(2) DEFAULT NULL, \
+							  `conf` varchar(3) DEFAULT NULL, \
 							  coach varchar(45) ,\
 							 PRIMARY KEY (`team_id`)  \
 							) ENGINE=InnoDB ");
